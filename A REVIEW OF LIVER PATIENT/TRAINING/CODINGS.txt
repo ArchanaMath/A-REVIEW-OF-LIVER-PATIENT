@@ -1,0 +1,44 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+from matplotlib import rcparams
+from scipy import stats
+data.head()
+data.info()
+data.isnull().any()
+data.isnull().sum()
+data['Albumin_and_Globulin_Ratio']=data.fillna(data[Albumin_and_Globulin_Ratio'].mode()[0])
+data.isnull().sum()
+from sklearn.preprocessing import LabelEncoder
+1c=LabelEncoder()
+data['gender']=lc.fit_transform(data['gender"])
+data.describe()
+sns.distplot(data['age'])
+plt.title('Age Distribution Graph')
+plt.show()
+sns.couuntplot(data['outcome'],hue=data['gender'])
+plt.figure(figsize=(10,7))
+sns.heatmap(df.corr(),annot=True)
+from sklearn.preprocessing import scale
+X-scaled=pd.DataFrame(x),columns=x.columns)
+X_scaled.head()
+x=data.iloc[:,:-1]
+y=data.outcome
+from sklearn.model_selection import train_test_split
+x_train,x-test,y_train,y_test=train_test_split(x_scaled,y,test_sixe=0.2,random_state=42)
+pip install implearn
+from imblearn.over_sampling import SMOTE
+smote=SMOTE()
+y_train.value_counts()
+x_train_smote,y_train_smote=smote.fit_resample(x_train,y_train)
+y_train_smote.value_counts()
+from sklearn.endsemble import RandomForestClassifier
+model1=RandomFrestClassifier()
+model1.fit(x_train_smote,y_train_smote)
+y_predict=model1.predict(x_test)
+rfc1=accuracy_score(y_test,y_predict)
+rfc1
+pd.crosstab(y_test,y_predict)
+print(classfication_resport(y_test,y_predict))
+
